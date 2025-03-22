@@ -119,19 +119,19 @@
             transform: translateY(0);
         }
 
-        /* background */
-        @keyframes spin-slow {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
+            /* background */
+            @keyframes spin-slow {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+        }
 
-.animate-spin-slow {
-    animation: spin-slow 20s linear infinite;
-}
+        .animate-spin-slow {
+            animation: spin-slow 20s linear infinite;
+        }
 
     </style>
 
@@ -141,48 +141,52 @@
     <div id="overlay"></div>
 
     <!-- Header -->
-    <header class="fixed top-0 left-0 w-full bg-transparent backdrop-blur-md z-50 rounded-b-lg">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold">Arkan</a>
+        <header class="fixed top-0 left-0 w-full bg-transparent backdrop-blur-md z-50 rounded-b-lg">
+            <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold">Arkan</a>
 
-            <!-- Menu Desktop -->
-            <nav class="hidden md:flex space-x-6">
-                <a href="#home" class="menu-link hover:text-gray-600">Home</a>
-                <a href="#about" class="menu-link hover:text-gray-600">About</a>
-                <a href="#projects" class="menu-link hover:text-gray-600">Projects</a>
-                <a href="#contact" class="menu-link hover:text-gray-600">Contact</a>
-            </nav>
+                <!-- Menu Desktop -->
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#home" class="menu-link hover:text-gray-600">Home</a>
+                    <a href="#about" class="menu-link hover:text-gray-600">About</a>
+                    <a href="#projects" class="menu-link hover:text-gray-600">Projects</a>
+                    <a href="#contact" class="menu-link hover:text-gray-600">Contact</a>
+                </nav>
 
-            <!-- Hamburger Menu -->
-            <div id="menu-btn" class="hamburger md:hidden">
-                <span></span>
-                <span></span>
-                <span></span>
+                <!-- Hamburger Menu -->
+                <div id="menu-btn" class="hamburger md:hidden">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
-        </div>
 
-        <!-- Mobile Menu -->
-        <nav id="mobile-menu" class="rounded-l-lg">
-            <button id="close-btn" class="absolute top-4 right-4 text-xl ">✖</button>
-            <a href="#home" class="menu-link block py-4 text-gray-800 hover:text-gray-600">Home</a>
-            <a href="#about" class="menu-link block py-4 text-gray-800 hover:text-gray-600">About</a>
-            <a href="#projects" class="menu-link block py-4 text-gray-800 hover:text-gray-600">Projects</a>
-            <a href="#contact" class="menu-link block py-4 text-gray-800 hover:text-gray-600">Contact</a>
-        </nav>
-    </header> 
+            <!-- Mobile Menu -->
+            <nav id="mobile-menu" class="rounded-l-lg">
+                <button id="close-btn" class="absolute top-4 right-4 text-xl ">✖</button>
+                <a href="#home" class="menu-link block py-4 text-gray-800 hover:text-gray-600">Home</a>
+                <a href="#about" class="menu-link block py-4 text-gray-800 hover:text-gray-600">About</a>
+                <a href="#projects" class="menu-link block py-4 text-gray-800 hover:text-gray-600">Projects</a>
+                <a href="#contact" class="menu-link block py-4 text-gray-800 hover:text-gray-600">Contact</a>
+            </nav>
+        </header> 
     <!-- End Header -->
 
     <!-- Content -->
     <main class="pt-20">
+
+        <!-- Home Section -->
+
         <section id="home" class="section h-screen flex flex-col md:flex-row justify-center items-center bg-gray-100 px-6 md:px-16 text-center md:text-left relative overflow-hidden">
-            <!-- Elemen Background Matahari -->
-            <div class="absolute w-72 h-72 md:w-96 md:h-96 bg-cover bg-center animate-spin-slow"
-                style="background-image: url('pict/background.png'); z-index: 0;">
+            <!-- Background Matahari -->
+            <div class="absolute inset-0 bg-cover bg-center opacity-20" 
+                style="background-image: url('pict/background.png');">
             </div>
         
             <!-- Foto Profil -->
             <div class="relative group w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-gray-300 shadow-lg z-10">
-                <img src="https://i.pinimg.com/474x/05/31/3b/05313ba446ffe4535925a356aaae786b.jpg" alt="Foto Arkan" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                <img src="https://i.pinimg.com/474x/95/16/10/951610e5ef754dbcc70bfa690dd6fe8a.jpg" alt="Foto Arkan" 
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
                 
                 <!-- Bio di atas foto -->
                 <div class="absolute inset-0 bg-black/60 flex flex-col justify-center items-center text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -201,80 +205,113 @@
         </section>
         
         
+        <!-- End Home Section -->
         
-        <section id="about" class="section h-screen flex justify-center items-center bg-white">
-            <h2 class="text-3xl font-bold">About Me</h2>
-        </section>
+        <!-- About Section -->
+
+            <section id="about" class="section min-h-screen flex flex-col md:flex-row items-center justify-center bg-white px-6 py-12 text-center md:text-left">
+                            
+                <!-- Foto Profil + Bio -->
+                <div class="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-gray-300 shadow-lg">
+                    <img src="https://i.pinimg.com/474x/cf/f7/33/cff73339f6db4bbf6e8fb67acf6da2f8.jpg" alt="Foto Arkan" class="w-full h-full object-cover">
+                </div>
+
+                <!-- Deskripsi -->
+                <div class="mt-6 md:mt-0 md:ml-12 max-w-lg">
+                    <h2 class="text-3xl font-bold">About Me</h2>
+                    <p class="mt-4 text-lg text-gray-600 leading-relaxed">
+                        Saya adalah seorang <span class="font-semibold">Freelancer Web Developer</span> yang pada tahun 2025 lolos SNBP di Universitas Diponegoro.
+                    </p>
+
+                    <!-- Hobi -->
+                    <h3 class="mt-6 text-2xl font-semibold">Hobbies & Interests</h3>
+                    <div class="flex flex-wrap gap-3 mt-4">
+                        <span class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg shadow-md hover:bg-gray-300 transition">Coding 💻</span>
+                        <span class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg shadow-md hover:bg-gray-300 transition">Gaming 🎮</span>
+                        <span class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg shadow-md hover:bg-gray-300 transition">Photography 📸</span>
+                        <span class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg shadow-md hover:bg-gray-300 transition">Music 🎵</span>
+                        <span class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg shadow-md hover:bg-gray-300 transition">Cycling 🚴</span>
+                        <span class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg shadow-md hover:bg-gray-300 transition">Gym 🏋️‍♂️</span>
+                    </div>
+                </div>
+            </section>
+
+        <!-- End About Section -->
+
         <!-- Project Section -->
-        <section id="projects" class="section min-h-screen flex flex-col justify-center items-center bg-gray-100 px-6 py-12 text-center">
-            <h2 class="text-3xl font-bold mb-6">My Projects 🚀</h2>
-        
-            <!-- Grid Project Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl">
-                <!-- Project 1 -->
-                <div class="relative group bg-white p-4 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
-                    <img src="https://i.pinimg.com/474x/96/17/1c/96171c2c6906d02ed6a4840088a7f47d.jpg"Project 1" class="w-full h-48 object-cover rounded-md">
-                    <h3 class="mt-4 text-xl font-semibold">Website Alumni(domain mati)</h3>
-                    <p class="text-gray-600 text-sm mt-2">Website yang dirancang menggunakan bahasa HTML, CSS, TAILWIND, dan PHP. Untuk informasi Alumni</p>
-                    <a href="https://shibarkan.com/alumni" target="_blank"
-                       class="absolute inset-0 flex items-center justify-center bg-black/60 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span class="text-lg font-semibold">View Project</span>
-                    </a>
+
+            <section id="projects" class="section min-h-screen flex flex-col justify-center items-center bg-gray-100 px-6 py-12 text-center">
+                <h2 class="text-3xl font-bold mb-6">My Projects 🚀</h2>
+                <!-- Background -->
+                     <div class="absolute inset-0 bg-cover bg-center opacity-20"style="background-image: url('https://i.pinimg.com/474x/80/e7/17/80e717d8c3bc711a9140bec4ff5e56fa.jpg');">
+                     </div>
+            
+                <!-- Grid Project Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl">
+                    <!-- Project 1 -->
+                    <div class="relative group bg-white p-4 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
+                        <img src="https://i.pinimg.com/474x/96/17/1c/96171c2c6906d02ed6a4840088a7f47d.jpg"Project 1" class="w-full h-48 object-cover rounded-md">
+                        <h3 class="mt-4 text-xl font-semibold">Website Alumni(domain mati)</h3>
+                        <p class="text-gray-600 text-sm mt-2">Website yang dirancang menggunakan bahasa HTML, CSS, TAILWIND, dan PHP. Untuk informasi Alumni</p>
+                        <a href="https://shibarkan.com/alumni" target="_blank"
+                        class="absolute inset-0 flex items-center justify-center bg-black/60 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-lg font-semibold">View Project</span>
+                        </a>
+                    </div>
+            
+                    <!-- Project 2 -->
+                    <div class="relative group bg-white p-4 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
+                        <img src="pict/project2.png" alt="Project 2" class="w-full h-48 object-cover rounded-md">
+                        <h3 class="mt-4 text-xl font-semibold">Web Ucapan</h3>
+                        <p class="text-gray-600 text-sm mt-2">Buat kalin <i>confess</i> ke orang yang kalian suka.</p>
+                        <a href="https://shibarkan.github.io/misteri-arkan/" target="_blank"
+                        class="absolute inset-0 flex items-center justify-center bg-black/60 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-lg font-semibold">View Project</span>
+                        </a>
+                    </div>
+            
+                    <!-- Project 3 -->
+                    <div class="relative group bg-white p-4 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
+                        <img src="pict/project3.png" alt="Project 3" class="w-full h-48 object-cover rounded-md">
+                        <h3 class="mt-4 text-xl font-semibold">Web Bazar</h3>
+                        <p class="text-gray-600 text-sm mt-2">Platform untuk informasi bazar pada saat P5.</p>
+                        <a href="https://bazaarx7.w3spaces.com/" target="_blank"
+                        class="absolute inset-0 flex items-center justify-center bg-black/60 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-lg font-semibold">View Project</span>
+                        </a>
+                    </div>
                 </div>
-        
-                <!-- Project 2 -->
-                <div class="relative group bg-white p-4 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
-                    <img src="pict/project2.png" alt="Project 2" class="w-full h-48 object-cover rounded-md">
-                    <h3 class="mt-4 text-xl font-semibold">Web Ucapan</h3>
-                    <p class="text-gray-600 text-sm mt-2">Buat kalin <i>confess</i> ke orang yang kalian suka.</p>
-                    <a href="https://shibarkan.github.io/misteri-arkan/" target="_blank"
-                       class="absolute inset-0 flex items-center justify-center bg-black/60 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span class="text-lg font-semibold">View Project</span>
-                    </a>
-                </div>
-        
-                <!-- Project 3 -->
-                <div class="relative group bg-white p-4 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
-                    <img src="pict/project3.png" alt="Project 3" class="w-full h-48 object-cover rounded-md">
-                    <h3 class="mt-4 text-xl font-semibold">Web Bazar</h3>
-                    <p class="text-gray-600 text-sm mt-2">Platform untuk informasi bazar pada saat P5 SMAN 3 Demak.</p>
-                    <a href="https://bazaarx7.w3spaces.com/" target="_blank"
-                       class="absolute inset-0 flex items-center justify-center bg-black/60 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span class="text-lg font-semibold">View Project</span>
-                    </a>
-                </div>
-            </div>
-        </section>
+            </section>
         
         <!-- End Project Section -->
         <!-- Contact Section -->
-        <section id="contact" class="section h-screen flex flex-col justify-center items-center bg-white px-6 text-center">
-            <h2 class="text-3xl font-bold mb-6">Contact Me 📩</h2>
-        
-            <!-- Daftar Sosial Media -->
-            <div class="flex space-x-6">
-                <!-- Instagram -->
-                <a href="https://www.instagram.com/si_shuu" target="_blank" 
-                    class="transition-transform duration-300 hover:scale-110 hover:brightness-110">
-                    <img src="https://i.pinimg.com/474x/f4/1e/2d/f41e2dab621c1ee5253cef74e3642fcf.jpg" alt="Instagram" class="w-12 h-12">
-                </a>
-                <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/username" target="_blank" 
-                    class="transition-transform duration-300 hover:scale-110 hover:brightness-110">
-                    <img src="https://i.pinimg.com/474x/49/32/80/49328097f84b5b6d80ffe0c104e4f429.jpg" alt="LinkedIn" class="w-12 h-12">
-                </a>
-                <!-- GitHub -->
-                <a href="https://github.com/Shibarkan" target="_blank" 
-                    class="transition-transform duration-300 hover:scale-110 hover:brightness-110">
-                    <img src="https://i.pinimg.com/474x/64/88/0b/64880b9b0fe5b53bbe3f7280d262b33f.jpg" alt="GitHub" class="w-12 h-12">
-                </a>
-                <!-- WhatsApp -->
-                <a href="https://wa.me/6283156980314" target="_blank" 
-                    class="transition-transform duration-300 hover:scale-110 hover:brightness-110">
-                    <img src="https://i.pinimg.com/474x/bf/8a/76/bf8a76719f900b8757154eb3cfbc844a.jpg" alt="WhatsApp" class="w-12 h-12">
-                </a>
-            </div>
-        </section>
+            <section id="contact" class="section h-screen flex flex-col justify-center items-center bg-white px-6 text-center">
+                <h2 class="text-3xl font-bold mb-6">Contact Me 📩</h2>
+            
+                <!-- Daftar Sosial Media -->
+                <div class="flex space-x-6">
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/si_shuu" target="_blank" 
+                        class="transition-transform duration-300 hover:scale-110 hover:brightness-110">
+                        <img src="https://i.pinimg.com/474x/f4/1e/2d/f41e2dab621c1ee5253cef74e3642fcf.jpg" alt="Instagram" class="w-12 h-12">
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/username" target="_blank" 
+                        class="transition-transform duration-300 hover:scale-110 hover:brightness-110">
+                        <img src="https://i.pinimg.com/474x/49/32/80/49328097f84b5b6d80ffe0c104e4f429.jpg" alt="LinkedIn" class="w-12 h-12">
+                    </a>
+                    <!-- GitHub -->
+                    <a href="https://github.com/Shibarkan" target="_blank" 
+                        class="transition-transform duration-300 hover:scale-110 hover:brightness-110">
+                        <img src="https://i.pinimg.com/474x/64/88/0b/64880b9b0fe5b53bbe3f7280d262b33f.jpg" alt="GitHub" class="w-12 h-12">
+                    </a>
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/62833156980314" target="_blank" 
+                        class="transition-transform duration-300 hover:scale-110 hover:brightness-110">
+                        <img src="https://i.pinimg.com/474x/bf/8a/76/bf8a76719f900b8757154eb3cfbc844a.jpg" alt="WhatsApp" class="w-12 h-12">
+                    </a>
+                </div>
+            </section>
         <!-- End Contact Section -->
         
     </main>
@@ -335,6 +372,8 @@
             });
         });
         // End Animation
+
     </script>
+
 </body>
 </html>
