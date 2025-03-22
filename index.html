@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Arkan</title>
+    <meta name="description" content="Portofolio Arkan, seorang desainer dan pengembang web yang berpengalaman dalam pembuatan website modern dan responsif.">
+    <meta name="keywords" content="portofolio Arkan, pengembang web, desainer web, web development, UI/UX, freelancer">
+    <meta name="author" content="Arkan">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/x-icon" href="icon/icon.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+        <!-- Schema Markup JSON-LD -->
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Arkan",
+              "url": "https://yourwebsite.com",
+              "sameAs": [
+                "https://linkedin.com/in/arkan",
+                "https://github.com/arkan",
+                "https://twitter.com/arkan"
+              ],
+              "jobTitle": "Web Developer & Designer",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Freelance"
+              }
+            }
+            </script>
+
+    <style>
+        
+        /* Navbar Mobile */
+        #mobile-menu {
+            position: fixed;
+            top: 15%;
+            right: -100%;
+            width: 50%;
+            height: 85vh;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: right 0.4s ease-in-out;
+            z-index: 50;
+        }
+        #mobile-menu.active {
+            right: 0;
+        }
+        /* End Navbar */
+
+        /* Overlay */
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 40;
+        }
+        #overlay.active {
+            display: block;
+        }
+
+        /* Animasi Hamburger Menu */
+        .hamburger {
+            width: 30px;
+            height: 24px;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 4px;
+            background: black;
+            position: absolute;
+            transition: transform 0.3s ease, top 0.3s ease, opacity 0.3s ease;
+        }
+        .hamburger span:nth-child(1) { top: 0; }
+        .hamburger span:nth-child(2) { top: 10px; }
+        .hamburger span:nth-child(3) { top: 20px; }
+
+        /* Animation menu*/
+        .hamburger.active span:nth-child(1) {
+            top: 10px;
+            transform: rotate(45deg);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            top: 10px;
+            transform: rotate(-45deg);
+        } 
+        /* End Animation */
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation Section */
+        .section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* background */
+        @keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+}
+
+    </style>
+
+</head>
+<body>
+    <!-- Overlay -->
+    <div id="overlay"></div>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full bg-transparent backdrop-blur-md z-50 rounded-b-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold">Arkan</a>
+
+            <!-- Menu Desktop -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="#home" class="menu-link hover:text-gray-600">Home</a>
+                <a href="#about" class="menu-link hover:text-gray-600">About</a>
+                <a href="#projects" class="menu-link hover:text-gray-600">Projects</a>
+                <a href="#contact" class="menu-link hover:text-gray-600">Contact</a>
+            </nav>
+
+            <!-- Hamburger Menu -->
+            <div id="menu-btn" class="hamburger md:hidden">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <nav id="mobile-menu" class="rounded-l-lg">
+            <button id="close-btn" class="absolute top-4 right-4 text-xl ">✖</button>
+            <a href="#home" class="menu-link block py-4 text-gray-800 hover:text-gray-600">Home</a>
+            <a href="#about" class="menu-link block py-4 text-gray-800 hover:text-gray-600">About</a>
+            <a href="#projects" class="menu-link block py-4 text-gray-800 hover:text-gray-600">Projects</a>
+            <a href="#contact" class="menu-link block py-4 text-gray-800 hover:text-gray-600">Contact</a>
+        </nav>
+    </header> 
+    <!-- End Header -->
+
+    <!-- Content -->
+    <main class="pt-20">
+        <section id="home" class="section h-screen flex flex-col md:flex-row justify-center items-center bg-gray-100 px-6 md:px-16 text-center md:text-left relative overflow-hidden">
+            <!-- Elemen Background Matahari -->
+            <div class="absolute w-72 h-72 md:w-96 md:h-96 bg-cover bg-center animate-spin-slow"
+                style="background-image: url('pict/background.png'); z-index: 0;">
+            </div>
+        
+            <!-- Foto Profil -->
+            <div class="relative group w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-gray-300 shadow-lg z-10">
+                <img src="pict/me.jpg" alt="Foto Arkan" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                
+                <!-- Bio di atas foto -->
+                <div class="absolute inset-0 bg-black/60 flex flex-col justify-center items-center text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p class="font-semibold">Muhammad Arkan</p>
+                    <p>Freelancer Web Dev</p>
+                </div>
+            </div>
+        
+            <!-- Perkenalan -->
+            <div class="mt-6 md:mt-0 md:ml-12 max-w-lg z-10">
+                <h1 class="text-4xl font-bold">Hi, I'm Arkan! 👋</h1>
+                <p class="mt-4 text-lg text-gray-600 leading-relaxed">
+                    Saya adalah Freelancer Web Developer
+                </p>
+            </div>
+        </section>
+        
+        
+        
+        <section id="about" class="section h-screen flex justify-center items-center bg-white">
+            <h2 class="text-3xl font-bold">About Me</h2>
+        </section>
+
+        <section id="projects" class="section h-screen flex justify-center items-center bg-gray-200">
+            <h2 class="text-3xl font-bold">My Projects</h2>
+        </section>
+
+        <section id="contact" class="section h-screen flex flex-col justify-center items-center bg-white px-6 text-center">
+            <h2 class="text-3xl font-bold mb-6">Contact Me 📩</h2>
+        
+            <!-- Daftar Sosial Media -->
+            <div class="flex space-x-6">
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/si_shuu" target="_blank" 
+                    class="transition-transform duration-300 hover:scale-110 hover:brightness-110">
+                    <img src="https://i.pinimg.com/736x/19/42/d5/1942d5deb0f788e6228054cd92767ff6.jpg" alt="Instagram" class="w-12 h-12">
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/username" target="_blank" 
+                    class="transition-transform duration-300 hover:scale-110 hover:brightness-110">
+                    <img src="https://i.pinimg.com/474x/49/32/80/49328097f84b5b6d80ffe0c104e4f429.jpg" alt="LinkedIn" class="w-12 h-12">
+                </a>
+                <!-- GitHub -->
+                <a href="https://github.com/Shibarkan" target="_blank" 
+                    class="transition-transform duration-300 hover:scale-110 hover:brightness-110">
+                    <img src="https://i.pinimg.com/474x/64/88/0b/64880b9b0fe5b53bbe3f7280d262b33f.jpg" alt="GitHub" class="w-12 h-12">
+                </a>
+                <!-- WhatsApp -->
+                <a href="https://wa.me/62833156980314" target="_blank" 
+                    class="transition-transform duration-300 hover:scale-110 hover:brightness-110">
+                    <img src="https://i.pinimg.com/474x/bf/8a/76/bf8a76719f900b8757154eb3cfbc844a.jpg" alt="WhatsApp" class="w-12 h-12">
+                </a>
+            </div>
+        </section>
+        
+    </main>
+    <!-- End Content -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const overlay = document.getElementById('overlay');
+        const menuLinks = document.querySelectorAll('.menu-link');
+
+        function openMenu() {
+            mobileMenu.classList.add('active');
+            overlay.classList.add('active');
+            menuBtn.classList.add('active');
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            menuBtn.classList.remove('active');
+        }
+
+        menuBtn.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('active')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+
+        closeBtn.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                const targetId = link.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+                closeMenu();
+            });
+        });
+
+        // Animation sections 
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll(".section");
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+        // End Animation
+    </script>
+</body>
+</html>
